@@ -7,24 +7,28 @@
     <!-- Import the component -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
-    <style>
-
-        
-
-    </style>
-
 </head>
 <body>
     
     <model-viewer src="models/gift_box.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls >
   
-    <button slot="hotspot-coin1" data-position="0 1 0" data-normal="0 1 0" class="coin-hotspot"></button>
+    <button class="Hotspot" id="Coin-One" slot="hotspot-1" data-position="-0.07456131301946735m 0.1513587902720474m 0.07437842202830858m" data-normal="0m -2.220446049250313e-16m 1m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Coin One</div>
+    </button>
+    <button class="Hotspot" id="Coin-Two" slot="hotspot-2" data-position="0.06870225179411792m 0.1576268256241047m -0.054023014374026596m" data-normal="0m 1m 2.220446049250313e-16m" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Coin Two</div>
+    </button>
 
     </model-viewer>
 
 <script>
 
-    document.querySelector('button[slot="hotspot-coin1"]')
+    document.getElementById('Coin-One')
+    .addEventListener('click', () => {
+        alert("Coin collected!");
+    });
+
+    document.getElementById('Coin-Two')
     .addEventListener('click', () => {
         alert("Coin collected!");
     });
